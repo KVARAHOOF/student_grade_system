@@ -300,6 +300,9 @@ def student_grades(user_id):
         """, (user_id,))
 
         results = c.fetchall()
+        if not results:
+            print("no grades found")
+            return
         name = results[0][0]
 
         print("\n====GRADE REPORT====")
